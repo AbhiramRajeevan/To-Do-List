@@ -41,7 +41,8 @@ const listSchema = {
   items : [itemsSchema]
 }
 
-const ignore = ["Favicon.ico","Robots.txt", "Humans.txt", "Sitemap.xml", "Ads.txt"]
+const ignore = ["Favicon.ico","Robots.txt", "Humans.txt", "Sitemap.xml", "Ads.txt","Site.webmanifest"]
+
 const List = mongoose.model("list",listSchema);
 
 app.get("/about", function(req, res) {
