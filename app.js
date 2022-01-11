@@ -4,9 +4,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const  _ = require("lodash")
+require('dotenv').config()
 //const date = require(__dirname + "/date.js");
 
 const app = express();
+
+//console.log(process.env)
 
 app.set('view engine', 'ejs');
 
@@ -15,7 +18,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-abhiram:aA111975@cluster0.uulti.mongodb.net/todolistDB");
+mongoose.connect("mongodb+srv://"+process.env.USER+":"+process.env.PASS+"@cluster0.uulti.mongodb.net/todolistDB");
 
 const itemsSchema = {
   name: String
